@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Dictionary Positioner</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding: 40px 24px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .header img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .header p {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .icon { font-size: 18px; }
+
+    .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .step-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .behavior-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .behavior-list li {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .behavior-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #16a34a;
+      font-weight: 700;
+    }
+
+    .note {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #1d4ed8;
+      line-height: 1.6;
+    }
+
+    .note strong { font-weight: 600; }
+
+    .version {
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="icons/icon128.png" alt="icon">
+    <div>
+      <h1>Mouse Dictionary Positioner</h1>
+      <p>Mouse Dictionary のポップアップをマウス近くに表示する拡張機能</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">📋</span> 使い方</h2>
+    <ol class="step-list">
+      <li>
+        <span class="step-num">1</span>
+        <span>Chrome に <strong>Mouse Dictionary</strong> をインストールして有効にする</span>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <span>本拡張機能（Mouse Dictionary Positioner）も有効にする</span>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <span>ページを <strong>リロード</strong> する（拡張機能有効後に開いたページから反映される）</span>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <span>英語テキストにマウスオーバーすると、ポップアップがマウスの近くに表示される</span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">⚡</span> 動作の仕様</h2>
+    <ul class="behavior-list">
+      <li>新しい単語にマウスオーバーしたとき、ポップアップがマウスの近くに移動する</li>
+      <li>同じ単語の上にいる間はポップアップ位置は固定される</li>
+      <li>画面端では自動的に位置を調整してはみ出しを防ぐ</li>
+      <li>Mouse Dictionary の辞書・活用変化対応などの機能はそのまま利用できる</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <strong>前提条件：</strong> この拡張機能は <strong>Mouse Dictionary</strong>（別途インストールが必要）と組み合わせて使います。
+  </div>
+
+  <p class="version">Mouse Dictionary Positioner v1.0.1</p>
+
+</body>
+</html>
